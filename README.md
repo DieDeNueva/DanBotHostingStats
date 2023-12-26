@@ -1,12 +1,8 @@
-# *This project will be discontinued soon as the bot is being rewritten.*
+## *This project is still work in progress*
 
 # DBH Discord Bot
-The Discord bot for DBH.
+The Discord bot is made to handle everything host related made open souce and available for everyone to use.
 
-## Maintainers
-- **DIBSTER**
-  - Email: dibster@danbot.host
-  - GitHub: [DEV-DIBSTER](https://github.com/DEV-DIBSTER)
-- **William**
-  - Email: william@danbot.host
-  - GitHub: [WilliamDavidHarrison](https://github.com/WilliamDavidHarrison)
+# Collaboration
+If you're willing to collab with us on this project, feel free to create a PR starting with then name `[REWRITE]` followed by whatever you the PR covers. (Example: `[REWRITE] Fixed typo...` etc)
+
