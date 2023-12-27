@@ -8,10 +8,21 @@ module.exports = {
      * @param {ModalSubmitInteraction} interaction 
      */
     async execute(interaction) {
+        
+        let content = interaction.fields.getField("content").value.trim();
+        let title = interaction.fields.getField("title").value.trim();
+        let description = interaction.fields.getField("description").value.trim();
 
-        let content = interaction.fields.getTextInputValue("content");
-        let title = interaction.fields.getTextInputValue("title");
-        let description = interaction.fields.getTextInputValue("description");
+        if (content.length == 0 && title.length == 0 && description.length == 0) {
+            const embed = new EmbedBuilder()
+                .setDescription(`You must fill at least one of the fields!`)
+                .setColor(Colors.Red)
+                .setTimestamp();
+
+            await interaction.reply({ embeds: [embed], ephemeral: true });
+
+            return;
+        }
 
         const row = new ActionRowBuilder().addComponents(new ButtonBuilder()
             .setCustomId("announcement-confirm")
@@ -20,14 +31,18 @@ module.exports = {
             .setStyle(ButtonStyle.Success),
         )
 
+        // could remove repetitivity but at the cost of readability.
         const embed = new EmbedBuilder()
-            .setTitle(title)
-            .setDescription(description)
+            .setTitle(title.length > 0 ? title : null)
+            .setDescription(description.length > 0 ? description : null)
             .setColor(Colors.Blurple)
             .setTimestamp();
 
-
-
-        await interaction.reply({ content, embeds: [embed], components: [row], ephemeral: true });
+        await interaction.reply({
+            content,
+            embeds: (title.length > 0 || description.length > 0) ? [embed] : [],
+            components: [row],
+            ephemeral: true
+        });
     },
 };

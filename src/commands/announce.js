@@ -4,7 +4,7 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('announce')
         .setDescription('Sends an embed announcement')
-        .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages),
+        .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     /**
      * 
      * @param {ChatInputCommandInteraction} interaction 
@@ -14,22 +14,23 @@ module.exports = {
         const contentInput = new TextInputBuilder()
             .setCustomId('content')
             .setLabel("CONTENT")
-            .setValue("@everyone")
+            .setPlaceholder("@everyone")
             .setRequired(false)
             .setStyle(TextInputStyle.Short);
 
         const titleInput = new TextInputBuilder()
             .setCustomId('title')
             .setLabel("TITLE")
-            .setValue("Announcement")
-            .setRequired(true)
+            .setPlaceholder("Announcement")
+            .setRequired(false)
             .setStyle(TextInputStyle.Short);
 
         const descriptionInput = new TextInputBuilder()
             .setCustomId('description')
             .setLabel("CONTENT")
+            .setPlaceholder("Your embed description.")
             .setMaxLength(4000)
-            .setRequired(true)
+            .setRequired(false)
             .setStyle(TextInputStyle.Paragraph);
 
         const content = new ActionRowBuilder().addComponents(contentInput);
