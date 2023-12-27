@@ -27,7 +27,7 @@ for (const file of commandFiles) {
     if ('data' in command && 'execute' in command) {
         client.commands.set(command.data.name, command);
     } else {
-        console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
+        console.log(chalk.bgYellow(`[WARNING]`), `The command at ${filePath} is missing a required "data" or "execute" property.`);
     }
 }
 
@@ -42,7 +42,7 @@ for (const file of buttonFiles) {
     if ('name' in button && 'execute' in button) {
         client.buttons.set(button.name, button);
     } else {
-        console.log(`[WARNING] The buttom at ${filePath} is missing a required "name" or "execute" property.`);
+        console.log(chalk.bgYellow(`[WARNING]`), `The buttom at ${filePath} is missing a required "name" or "execute" property.`);
     }
 }
 
@@ -57,7 +57,7 @@ for (const file of modalFiles) {
     if ('name' in modal && 'execute' in modal) {
         client.modals.set(modal.name, modal);
     } else {
-        console.log(`[WARNING] The modal at ${filePath} is missing a required "name" or "execute" property.`);
+        console.log(chalk.bgYellow(`[WARNING]`), `The modal at ${filePath} is missing a required "name" or "execute" property.`);
     }
 }
 
