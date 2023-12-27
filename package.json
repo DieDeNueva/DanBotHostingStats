@@ -1,0 +1,29 @@
+{
+  "name": "hosting-stats",
+  "version": "1.0.0",
+  "description": "Manager bot for hosts based off of discord.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanBot-Hosting/HostingStats.git"
+  },
+  "keywords": [
+    "hosting",
+    "discord",
+    "pterodactyl"
+  ],
+  "author": "DBH, HadiMhz, danielpmc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanBot-Hosting/HostingStats/issues"
+  },
+  "homepage": "https://github.com/DanBot-Hosting/HostingStats#readme",
+  "dependencies": {
+    "chalk": "^3.0.0-beta.2",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1"
+  }
+}
