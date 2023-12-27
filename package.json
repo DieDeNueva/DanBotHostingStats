@@ -4,7 +4,7 @@
   "description": "Manager bot for hosts based off of discord.",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "register": "node deploy-commands.js"
   },
   "repository": {
     "type": "git",
